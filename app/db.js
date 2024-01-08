@@ -20,7 +20,7 @@ export function createMintingTable() {
 `;
 }
 
-export function postMinting(tx) {
+export async function postMinting(tx) {
   return sql`
     INSERT INTO Mints (Address, Token, Txhash)
     VALUES (${tx.address}, ${tx.token}, ${tx.txhash})
@@ -32,11 +32,11 @@ export function postMinting(tx) {
 }
 
 export async function getMintings() {
-  const {rows} = await sql<Minting>`SELECT * FROM Mints;`;
+  const {rows} = await sql`SELECT * FROM Mints;`;
   return rows;
 }
 
 export async function getMintingByAddress(address) {
-  const {rows} = await sql<Minting>`SELECT * FROM Mints WHERE Address = ${address};`;
+  const {rows} = await sql`SELECT * FROM Mints WHERE Address = ${address};`;
   return rows[0];
 }

@@ -3,7 +3,7 @@
 import React, { useContext, useState } from "react";
 import { WalletContext } from "./wallet";
 import ChainInfo from "./data/chain-info-ebony";
-// import { postMinting } from "./api/db";
+import { postMinting } from "./db";
 
 const Minting = () => {
   const { client, accounts } = useContext(WalletContext);
@@ -28,7 +28,7 @@ const Minting = () => {
           console.log("Transaction Response", deliverTxResponse);
           await setTxResponse(deliverTxResponse); // 상태 업데이트
           if (deliverTxResponse.transactionHash) {
-            // postMinting({ address: address, token: amount, txhash: deliverTxResponse.transactionHash });
+            await postMinting({ address: address, token: amount, txhash: deliverTxResponse.transactionHash });
           }
         } catch (e) {
           console.warn("Error sending tokens", e);

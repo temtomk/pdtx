@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState, useContext, useEffect } from "react";
-import ChainInfo from "./data/chain-info-ebony";
 import { WalletContext } from "./wallet";
+import { getMintingByAddress } from "./db.js";
 
 const Profile = () => {
   const { client, accounts, isConnected } = useContext(WalletContext);
@@ -16,26 +16,28 @@ const Profile = () => {
   }, [isConnected, accounts]);
 
   const getAccountsBalance = async () => {
-    if (!client || !accounts || accounts.length === 0) {
-      console.warn("Wallet is not connected or accounts are not available");
-      return;
-    }
-    try {
-      const address = accounts[0].address;
-      let balanceResult = await client.getBalance(
-        address,
-        ChainInfo.currencies[0].coinMinimalDenom
-      );
-      // balance.amount는 문자열이므로 숫자로 변환합니다.
-      let amount = balanceResult.amount;
-      // 문자열로부터 숫자로 변환하고 0.000001을 곱합니다.
-      let calculatedBalance = (Number(amount) * 0.000001).toFixed(6);
-      console.log(`Account balance: ${calculatedBalance}`);
-      // 상태를 업데이트합니다.
-      setBalance(calculatedBalance);
-    } catch (e) {
-      console.error("Error reading account balance", e);
-    }
+  //   if (!client || !accounts || accounts.length === 0) {
+  //     console.warn("Wallet is not connected or accounts are not available");
+  //     return;
+  //   }
+  //   try {
+  //     const address = accounts[0].address;
+  //     let balanceResult = await client.getBalance(
+  //       address,
+  //       ChainInfo.currencies[0].coinMinimalDenom
+  //     );
+  //     // balance.amount는 문자열이므로 숫자로 변환합니다.
+  //     let amount = balanceResult.amount;
+  //     // 문자열로부터 숫자로 변환하고 0.000001을 곱합니다.
+  //     let calculatedBalance = (Number(amount) * 0.000001).toFixed(6);
+  //     console.log(`Account balance: ${calculatedBalance}`);
+  //     // 상태를 업데이트합니다.
+  //     setBalance(calculatedBalance);
+  //   } catch (e) {
+  //     console.error("Error reading account balance", e);
+  //   }
+    const userBalance = await getMintingByAddress(accounts[0].address);
+    setBalance(userBalance);
   };
 
   return (

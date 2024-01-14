@@ -74,5 +74,5 @@ const finschiaChainInfo = {
   features: ["stargate", "ibc-transfer", "no-legacy-stdTx"],
 };
 
-export const chainInfo =
-  process.env.NODE_ENV === "development" ? ebonyChainInfo : finschiaChainInfo;
+// export const chainInfo = process.env.NODE_ENV === "development" ? ebonyChainInfo : finschiaChainInfo;
+export const chainInfo = ebonyChainInfo;

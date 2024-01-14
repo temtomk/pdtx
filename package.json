@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@cosmjs/cosmwasm-stargate": "^0.32.2",
+    "@svgr/webpack": "^8.1.0",
     "@vercel/postgres": "^0.5.1",
     "@vercel/postgres-kysely": "^0.6.0",
     "kysely": "^0.27.2",

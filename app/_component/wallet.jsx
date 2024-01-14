@@ -20,7 +20,6 @@ export const WalletProvider = ({ children }) => {
   const [isConnected, setIsConnected] = useState(false);
 
   const connectWallet = async () => {
-    console.log("Button click");
     if (window.keplr) {
       try {
         await window.keplr.experimentalSuggestChain(chainInfo);

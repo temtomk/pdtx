@@ -3,14 +3,16 @@ import WalletConnect from "./_component/wallet-connect";
 import Minting from "./_component/mint";
 import Profile from "./_component/profile";
 import { WalletProvider } from "./_component/wallet";
+import GODF from "../public/GODF.svg";
 
 export default function Component(props) {
   return (
     <WalletProvider>
       <div className="bg-zinc-800 flex flex-col py-11">
         <WalletConnect />
-        <div className="text-white text-center text-7xl tracking-[7px] self-center whitespace-nowrap mt-52 max-md:text-4xl max-md:mt-10">
-          <span className="font-bold">$GODF</span>inscia
+        <div className="flex items-center justify-center text-white text-center text-7xl tracking-[7px] self-center whitespace-nowrap mt-52 max-md:text-4xl max-md:mt-10">
+          <GODF width="1em" height="1em" />
+          <span className="font-bold ml-1">$GODF</span>inscia
         </div>
         <div className="text-white text-center text-xl tracking-wide max-w-[363px] self-center mt-12 max-md:mt-10">
           Total Supply 21,000,000
@@ -24,7 +26,7 @@ export default function Component(props) {
             <div className="text-white text-center text-4xl tracking-[2.8px] whitespace-nowrap">
               1MINT = 1$GODF
             </div>
-            <div className="items-stretch self-stretch flex justify-between gap-5 mt-14 max-md:max-w-full max-md:flex-wrap max-md:mt-10 max-sm:flex max-sm:flex-row max-sm:self-stretch max-sm:items-center max-sm:justify-between max-sm:w-auto max-sm:h-auto max-sm:grow-0">
+            <div className="items-stretch self-stretch flex justify-between gap-5 mt-14 max-md:max-w-full max-md:flex-wrap max-md:mt-10 max-sm:flex max-sm:flex-col max-sm:self-stretch max-sm:items-center max-sm:justify-between max-sm:w-auto max-sm:h-auto max-sm:grow-0">
               <Minting />
               <div className="shrink-0 width-200 inline-block">
                 <Profile />

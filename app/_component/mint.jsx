@@ -2,7 +2,7 @@
 
 import React, { useContext, useState } from "react";
 import { WalletContext } from "./wallet";
-import ChainInfo from "../data/chain-info-ebony";
+import { chainInfo } from "../data/chain-info";
 
 const Minting = () => {
   const { client, accounts } = useContext(WalletContext);
@@ -17,7 +17,7 @@ const Minting = () => {
             address,
             [
               {
-                denom: ChainInfo.currencies[0].coinMinimalDenom,
+                denom: chainInfo.currencies[0].coinMinimalDenom,
                 amount: amount,
               },
             ],

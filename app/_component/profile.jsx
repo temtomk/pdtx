@@ -6,11 +6,11 @@ import { WalletContext } from "./wallet";
 const Profile = () => {
   const { accounts } = useContext(WalletContext);
   // 잔액 상태를 추가합니다.
-  const [balance, setBalance] = useState(null);
+  const [balance, setBalance] = useState(0);
+  const [hasChecked, setHasChecked] = useState(false);
 
   const getAccountsBalance = async () => {
-    console.log(accounts);
-    if (accounts || accounts.length != 0) {
+    if (accounts) {
       await fetch(`/api/minting/${accounts[0].address}`)
         .then((response) => response.json())
         .then((data) => {
@@ -18,7 +18,7 @@ const Profile = () => {
         })
         .catch((error) => console.error("Error:", error));
     }
-    console.log(balance);
+    setHasChecked(true);
   };
 
   return (
@@ -32,7 +32,7 @@ const Profile = () => {
         </button>
 
         <p className="text-white text-center text-2xl whitespace-nowrap mt-5">
-          {balance == null ? "No account" : `Balance: ${balance}`}
+          {hasChecked && (accounts ? `Balance: ${balance}` : "No connected")}
         </p>
       </div>
     </>

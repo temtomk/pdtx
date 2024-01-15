@@ -12,6 +12,7 @@ export const WalletContext = createContext({
   accounts: null,
   isConnected: false,
   connectWallet: () => {},
+  balance: null,
 });
 
 export const WalletProvider = ({ children }) => {
@@ -20,6 +21,13 @@ export const WalletProvider = ({ children }) => {
   const [isConnected, setIsConnected] = useState(false);
 
   const connectWallet = async () => {
+    if (isConnected === true) {
+      setIsConnected(false);
+      setClient(null);
+      setAccounts(null);
+      return;
+    }
+
     if (window.keplr) {
       try {
         await window.keplr.experimentalSuggestChain(chainInfo);
@@ -68,7 +76,12 @@ export const WalletProvider = ({ children }) => {
 
   return (
     <WalletContext.Provider
-      value={{ client, accounts, isConnected, connectWallet }}
+      value={{
+        client,
+        accounts,
+        isConnected,
+        connectWallet,
+      }}
     >
       {children}
     </WalletContext.Provider>

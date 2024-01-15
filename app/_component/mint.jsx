@@ -58,14 +58,12 @@ const Minting = () => {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <div>
-        <button
-          className="text-white text-center text-2xl tracking-[2.88px] whitespace-nowrap grow justify-center items-stretch bg-red-600 border px-12 py-3.5 rounded-[32px] max-md:px-5 max-sm:items-center max-sm:max-w-[154px] max-sm:mx-auto"
-          onClick={minting}
-        >
-          MINT
-        </button>
-      </div>
+      <button
+        className="w-full text-white text-center text-2xl tracking-[2.88px] whitespace-nowrap grow justify-center items-stretch bg-red-600 border px-12 py-3.5 rounded-[32px] max-md:px-5 max-sm:items-center max-sm:max-w-[154px] max-sm:mx-auto"
+        onClick={minting}
+      >
+        MINT
+      </button>
     </div>
   );
 };

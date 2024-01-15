@@ -10,7 +10,7 @@ export default function Component(props) {
     <WalletProvider>
       <div className="bg-zinc-800 flex flex-col py-11">
         <WalletConnect />
-        <div className="flex items-center justify-center text-white text-center text-7xl tracking-[7px] self-center whitespace-nowrap mt-52 max-md:text-4xl max-md:mt-10">
+        <div className="flex items-center justify-center text-white text-center text-7xl tracking-[7px] self-center whitespace-nowrap mt-20 max-md:text-4xl max-md:mt-5">
           <GODF width="1em" height="1em" />
           <span className="font-bold ml-1">$GODF</span>inscia
         </div>
@@ -23,17 +23,19 @@ export default function Component(props) {
         </div>
         <div className="justify-center items-center self-stretch bg-white bg-opacity-40 flex w-full flex-col mt-12 mb-40 px-16 py-12 max-md:max-w-full max-md:my-10 max-md:px-5">
           <div className="flex w-[620px] max-w-full flex-col items-center">
-            <div className="text-white text-center text-4xl tracking-[2.8px] whitespace-nowrap">
+            <div className="text-white text-center md:text-[2vw] tracking-[2.8px] whitespace-nowrap">
               1MINT = 1$GODF
             </div>
-            <div className="items-stretch self-stretch flex justify-between gap-5 mt-14 max-md:max-w-full max-md:flex-wrap max-md:mt-10 max-sm:flex max-sm:flex-col max-sm:self-stretch max-sm:items-center max-sm:justify-between max-sm:w-auto max-sm:h-auto max-sm:grow-0">
-              <Minting />
-              <div className="shrink-0 width-200 inline-block">
+            <div className="grid grid-cols-3 sm:grid-cols-3 xl:grid-cols-3 flex items-stretch self-stretch justify-between gap-5 mt-14 max-md:max-w-full max-md:flex-wrap max-md:mt-10 max-sm:flex max-sm:flex-col max-sm:self-stretch max-sm:items-center max-sm:justify-between max-sm:w-auto max-sm:h-auto max-sm:grow-0">
+              <div className="col-span-1 w-full">
+                <Minting />
+              </div>
+              <div className="col-span-1 w-full shrink-0 inline-block">
                 <Profile />
               </div>
-              <div className="flex flex-col justify-center items-center">
+              <div className="col-span-1 w-full flex-col justify-center items-center">
                 <div>
-                  <div className="text-white text-center text-2xl tracking-[2.88px] whitespace-nowrap grow justify-center items-stretch bg-sky-600 px-10 py-3.5 rounded-[32px] max-md:px-5 max-sm:items-center max-sm:max-w-[154px] max-sm:mx-auto">
+                  <div className="w-full text-white text-center text-2xl tracking-[2.88px] border whitespace-nowrap grow justify-center items-stretch bg-sky-600 px-10 py-3.5 rounded-[32px] max-md:px-5 max-sm:items-center max-sm:max-w-[154px] max-sm:mx-auto">
                     <a
                       href="https://twitter.com/godfinschia"
                       target="_blank"

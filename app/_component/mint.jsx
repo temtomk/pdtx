@@ -2,7 +2,7 @@
 
 import React, { useContext, useState } from "react";
 import { WalletContext } from "./wallet";
-import { chainInfo } from "../data/chain-info";
+import { chainInfo } from "../utils/chain-info";
 
 const Minting = () => {
   const { client, accounts } = useContext(WalletContext);
@@ -50,7 +50,7 @@ const Minting = () => {
 
       var recipientAddress = accounts[0].address;
       var amount = "1"; // 보낼 토큰의 양
-      var memo = '{"p":"frc-20","op":"mint","tick":"TEST","amt":"1000"}'; // 메모
+      var memo = '{"p":"finrc-20","op":"mint","tick":"PDTX","amt":"1"}'; // 메모
 
       sendTokensTo(recipientAddress, amount, memo);
     }
@@ -59,10 +59,10 @@ const Minting = () => {
   return (
     <div className="flex flex-col justify-center items-center">
       <button
-        className="w-full text-white text-center text-2xl tracking-[2.88px] whitespace-nowrap grow justify-center items-stretch bg-red-600 border px-12 py-3.5 rounded-[32px] max-md:px-5 max-sm:items-center max-sm:max-w-[154px] max-sm:mx-auto"
+        className="w-full text-white text-center text-2xl whitespace-nowrap grow justify-center items-stretch bg-red-600 border px-12 py-3.5 rounded-[32px] max-md:px-5 max-sm:items-center max-sm:max-w-[154px] max-sm:mx-auto"
         onClick={minting}
       >
-        MINT
+        Disagree
       </button>
     </div>
   );

@@ -20,13 +20,11 @@ const ebonyChainInfo = {
       coinDecimals: 6,
     },
   ],
-  stakeCurrency: [
-    {
-      coinDenom: "TFINSCHIA",
-      coinMinimalDenom: "tcony",
-      coinDecimals: 6,
-    },
-  ],
+  stakeCurrency: {
+    coinDenom: "TFINSCHIA",
+    coinMinimalDenom: "tcony",
+    coinDecimals: 6,
+  },
   coinType: 118,
   gasPriceStep: {
     low: 1,
@@ -58,13 +56,11 @@ const finschiaChainInfo = {
       coinDecimals: 6,
     },
   ],
-  stakeCurrency: [
-    {
-      coinDenom: "FINSCHIA",
-      coinMinimalDenom: "cony",
-      coinDecimals: 6,
-    },
-  ],
+  stakeCurrency: {
+    coinDenom: "FINSCHIA",
+    coinMinimalDenom: "cony",
+    coinDecimals: 6,
+  },
   coinType: 118,
   gasPriceStep: {
     low: 1,
@@ -74,5 +70,6 @@ const finschiaChainInfo = {
   features: ["stargate", "ibc-transfer", "no-legacy-stdTx"],
 };
 
-// export const chainInfo = process.env.NODE_ENV === "development" ? ebonyChainInfo : finschiaChainInfo;
-export const chainInfo = ebonyChainInfo;
+export const chainInfo =
+  process.env.NODE_ENV === "development" ? ebonyChainInfo : finschiaChainInfo;
+// export const chainInfo = ebonyChainInfo;

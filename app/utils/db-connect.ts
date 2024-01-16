@@ -4,7 +4,6 @@ import { MongoClient } from "mongodb";
 
 let cachedDb = null;
 let collection = "mints";
-// let collection = "tests";
 
 async function connectToDatabase() {
   if (cachedDb) {

@@ -33,7 +33,7 @@ const Profile = () => {
 
         <p className="text-white text-center text-2xl whitespace-nowrap mt-5">
           {hasChecked &&
-            (accounts ? `Balance: ${balance || 0}` : "No connected")}
+            (accounts ? `My balance: ${balance || 0} $PDTX` : "No connected")}
         </p>
       </div>
     </>

@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
     const result = await db.findOneAndUpdate(
       { Address: address },
       {
-        $inc: { Token: 1000 },
+        $inc: { Token: 1 },
         $push: { Txhash: txhash },
       },
       { upsert: true }

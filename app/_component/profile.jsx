@@ -32,7 +32,8 @@ const Profile = () => {
         </button>
 
         <p className="text-white text-center text-2xl whitespace-nowrap mt-5">
-          {hasChecked && (accounts ? `Balance: ${balance}` : "No connected")}
+          {hasChecked &&
+            (accounts ? `Balance: ${balance || 0}` : "No connected")}
         </p>
       </div>
     </>

@@ -21,8 +21,8 @@ const Total = () => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center mt-5 text-2xl">
-      현재까지 모인 $PDTX: {total.toLocaleString()} / 7,517,509
+    <div className="flex flex-col justify-center items-center mt-5 text-2xl text-white">
+      현재까지 채굴된 $PDTX: {total.toLocaleString()} / 7,517,509
     </div>
   );
 };

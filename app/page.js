@@ -1,10 +1,10 @@
 import * as React from "react";
-import WalletConnect from "./_component/wallet-connect";
-import Minting from "./_component/mint";
-import Profile from "./_component/profile";
-import { WalletProvider } from "./_component/wallet";
+import WalletConnect from "./component/wallet-connect";
+import Minting from "./component/mint";
+import Profile from "./component/profile";
+import { WalletProvider } from "./component/wallet";
 import Pdtx from "../public/pdtx.svg";
-import Total from "./_component/get-total";
+import Total from "./component/get-total";
 
 export default function Component(props) {
   return (

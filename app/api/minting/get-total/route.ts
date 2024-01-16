@@ -9,8 +9,8 @@ export async function GET() {
       .aggregate([
         {
           $group: {
-            _id: null, // 특정 그룹으로 묶지 없고 전체 document에 대해 연산을 하기 위해 null을 지정합니다.
-            totalToken: { $sum: "$Token" }, // "Token" 필드의 값들을 모두 더합니다.
+            _id: null,
+            totalToken: { $sum: "$Token" },
           },
         },
       ])
@@ -18,7 +18,7 @@ export async function GET() {
 
     console.log(result);
 
-    return NextResponse.json(result); // 응답 반환
+    return NextResponse.json(result);
   } catch (err) {
     return NextResponse.json({ message: err.message });
   }

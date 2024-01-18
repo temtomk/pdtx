@@ -29,8 +29,7 @@ function Total() {
   return (
     <div className="flex flex-col justify-center items-center mt-5 text-2xl text-white">
       <p>
-        현재까지 채굴된 $PDTX:{" "}
-        {total ? total.toLocaleString() : "데이터 로딩 중..."} / 7,517,509
+        현재까지 채굴된 $PDTX: {total ? total.toLocaleString() : 0} / 7,517,509
         {/* Total Supply: 7,517,509 */}
       </p>
     </div>

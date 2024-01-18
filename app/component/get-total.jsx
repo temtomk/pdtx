@@ -7,11 +7,10 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function Total() {
   const { data, error } = useSWR(
-    `http://localhost:3000/api/minting/get-total`,
+    // `https://disagree-pdt.vercel.app/api/minting/get-total`,
+    "/api/minting/api/minting/get-total",
     fetcher
   );
-
-  console.log(data);
 
   if (error) {
     return <div>Error: {error.message}</div>;

@@ -15,8 +15,6 @@ export async function GET(req, { params: { address } }) {
 
     const result = await db.findOne({ Address: address });
 
-    console.log(result);
-
     return NextResponse.json(result); // 응답 반환
   } catch (err) {
     return NextResponse.json({ message: err.message });

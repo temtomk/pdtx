@@ -1,9 +1,18 @@
 import { NextResponse } from "next/server";
-import connectToDatabase from "../../../utils/db-connect";
+import { connectDB } from "../../../utils/db-connect";
+import { revalidateTag } from "next/cache";
+
+export const revalidate = 2;
 
 export async function GET() {
+  let collection = "mints";
+  let database = "godfinshia";
   try {
-    const db = await connectToDatabase();
+    if (process.env.NODE_ENV == "development") {
+      collection = "tests";
+    }
+
+    const db = (await connectDB).db(database).collection(collection);
 
     const result = await db
       .aggregate([
@@ -16,9 +25,9 @@ export async function GET() {
       ])
       .toArray();
 
-    console.log(result);
+    const res = NextResponse.json(result);
 
-    return NextResponse.json(result);
+    return res;
   } catch (err) {
     return NextResponse.json({ message: err.message });
   }

@@ -7,7 +7,7 @@ import Pdtx from "../public/pdtx.svg";
 import Total from "./component/get-total";
 // import ProfileTotal from "./component/profile-total";
 
-export default function Component(props) {
+export default function Component() {
   return (
     <WalletProvider>
       <div className="bg-zinc-800 flex flex-col py-11">

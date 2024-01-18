@@ -1,30 +1,17 @@
-// dbConnect.js
-
 import { MongoClient } from "mongodb";
 
-let cachedDb = null;
-let collection = "mints";
+const url = process.env.MONGODB_URI;
+// const options: any = { useNewUrlParser: true };
+let connectDB: Promise<MongoClient>;
 
-async function connectToDatabase() {
-  if (cachedDb) {
-    return cachedDb;
+if (process.env.NODE_ENV === "development") {
+  // 개발 중 재실행을 막음
+  if (!global._mongo) {
+    global._mongo = new MongoClient(url).connect();
   }
-
-  const uri = process.env.MONGODB_URI;
-
-  const client = await MongoClient.connect(uri);
-
-  if (process.env.NODE_ENV === "development") {
-    collection = "tests";
-  }
-
-  const db = await client.db("godfinshia");
-
-  const connectedCollection = await db.collection(collection);
-
-  cachedDb = connectedCollection;
-
-  return connectedCollection;
+  connectDB = global._mongo;
+} else {
+  connectDB = new MongoClient(url).connect();
 }
 
-export default connectToDatabase;
+export { connectDB };

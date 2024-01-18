@@ -1,10 +1,9 @@
 import * as React from "react";
 import WalletConnect from "./component/wallet-connect";
-import Minting from "./component/mint";
-import Profile from "./component/profile";
 import { WalletProvider } from "./component/wallet";
 import Pdtx from "../public/pdtx.svg";
 import Total from "./component/get-total";
+import Container from "./component/container";
 // import ProfileTotal from "./component/profile-total";
 
 export default function Component() {
@@ -40,7 +39,9 @@ export default function Component() {
 
         <Total />
 
-        <div className="justify-center items-center self-stretch bg-white bg-opacity-40 flex w-full flex-col mt-12 mb-20 px-16 py-12 max-md:max-w-full max-md:my-10 max-md:px-5">
+        <Container />
+
+        {/* <div className="justify-center items-center self-stretch bg-white bg-opacity-40 flex w-full flex-col mt-12 mb-20 px-16 py-12 max-md:max-w-full max-md:my-10 max-md:px-5">
           <div className="flex w-[620px] max-w-full flex-col items-center">
             <div className="text-white text-center md:text-[2.3vw] tracking-[2.8px] whitespace-nowrap">
               1 Disagree = 1 $PDTX
@@ -67,7 +68,7 @@ export default function Component() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="text-center text-white mt-1 mb-5">
           Copyrightsⓒ 2024 All rights reserved by TEAM REVENGERS
         </div>

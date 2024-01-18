@@ -4,12 +4,12 @@ import React, { useContext, useState } from "react";
 import { WalletContext } from "./wallet";
 import { chainInfo } from "../utils/chain-info";
 
-const Minting = () => {
+const Minting = ({ onButtonClick }) => {
   const { client, accounts } = useContext(WalletContext);
   const [txResponse, setTxResponse] = useState(null);
-  const [isConnected, setIsConnected] = useState(true);
 
   const minting = async () => {
+    onButtonClick();
     if (client && accounts) {
       const sendTokensTo = async (address, amount, memo) => {
         try {
@@ -55,8 +55,6 @@ const Minting = () => {
       var memo = '{"p":"finrc-20","op":"mint","tick":"PDTX","amt":"1"}'; // 메모
 
       sendTokensTo(recipientAddress, amount, memo);
-    } else {
-      setIsConnected(false);
     }
   };
 
@@ -68,10 +66,6 @@ const Minting = () => {
       >
         Disagree
       </button>
-
-      <p className="text-white text-center text-2xl whitespace-nowrap mt-5">
-        {!isConnected && <p>No connected</p>}
-      </p>
     </div>
   );
 };

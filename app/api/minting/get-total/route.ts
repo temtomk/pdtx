@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
 import { connectDB } from "../../../utils/db-connect";
-import { revalidateTag } from "next/cache";
 
-export const revalidate = 2;
+export const revalidate = 0;
 
 export async function GET() {
   let collection = "mints";

@@ -18,7 +18,7 @@ export async function POST(req) {
       { Address: tx.address },
       {
         $inc: { Token: 1 },
-        $push: { Txhash: tx.txhash },
+        $push: { Txhash: tx.txhash, Height: tx.height },
       },
       { upsert: true }
     );

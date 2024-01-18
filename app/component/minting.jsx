@@ -55,13 +55,18 @@ const Minting = ({ onButtonClick }) => {
       var memo = '{"p":"finrc-20","op":"mint","tick":"PDTX","amt":"1"}'; // 메모
 
       sendTokensTo(recipientAddress, amount, memo);
+    } else {
+      window.open(
+        "https://chromewebstore.google.com/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap",
+        "_blank"
+      );
     }
   };
 
   return (
     <div className="flex flex-col justify-center items-center">
       <button
-        className="w-full text-white text-center text-2xl whitespace-nowrap grow justify-center items-stretch bg-red-600 border px-12 py-3.5 rounded-[32px] max-md:px-5 max-sm:items-center max-sm:max-w-[154px] max-sm:mx-auto"
+        className="flex w-full text-white text-center text-2xl whitespace-nowrap grow justify-center items-stretch bg-red-600 border px-12 py-3.5 rounded-[32px] max-md:px-5 max-sm:items-center max-sm:max-w-[154px] max-sm:mx-auto"
         onClick={minting}
       >
         Disagree

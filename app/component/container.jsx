@@ -19,7 +19,7 @@ const Container = () => {
         <div className="text-white text-center md:text-[2.3vw] tracking-[2.8px] whitespace-nowrap">
           1 Disagree = 1 $PDTX
         </div>
-        <div className="grid grid-cols-3 sm:grid-cols-3 xl:grid-cols-3 flex items-stretch self-stretch justify-between gap-5 mt-14 max-md:max-w-full max-md:flex-wrap max-md:mt-10 max-sm:flex max-sm:flex-col max-sm:self-stretch max-sm:items-center max-sm:justify-between max-sm:w-auto max-sm:h-auto max-sm:grow-0">
+        <div className="grid grid-cols-4 sm:grid-cols-4 xl:grid-cols-4 flex items-stretch self-stretch justify-between gap-5 mt-14 max-md:max-w-full max-md:flex-wrap max-md:mt-10 max-sm:flex max-sm:flex-col max-sm:self-stretch max-sm:items-center max-sm:justify-between max-sm:w-auto max-sm:h-auto max-sm:grow-0">
           <div className="col-span-1 w-full">
             <Minting onButtonClick={checkConnection} />
           </div>
@@ -31,7 +31,7 @@ const Container = () => {
           </div>
           <div className="col-span-1 w-full flex-col justify-center items-center">
             <div>
-              <div className="w-full text-white text-center text-2xl tracking-[2.88px] border whitespace-nowrap grow justify-center items-stretch bg-sky-600 px-10 py-3.5 rounded-[32px] max-md:px-5 max-sm:items-center max-sm:max-w-[154px] max-sm:mx-auto">
+              <div className="flex w-full text-2xl tracking-[2.88px] border whitespace-nowrap grow justify-center items-stretch bg-sky-600 px-10 py-3.5 rounded-[32px] max-md:px-5 max-sm:items-center max-sm:max-w-[154px] max-sm:mx-auto">
                 <a
                   href="https://twitter.com/TEAM_REVENGERS_"
                   target="_blank"
@@ -42,7 +42,23 @@ const Container = () => {
               </div>
             </div>
           </div>
+          <div className="col-span-1 w-full flex-col justify-center items-center">
+            <div className="flex w-full text-2xl tracking-[2.88px] border whitespace-nowrap grow justify-center items-stretch bg-yellow-600 px-10 py-3.5 rounded-[32px] max-md:px-5 max-sm:items-center max-sm:max-w-[154px] max-sm:mx-auto">
+              <a
+                href="https://team-revengers.gitbook.io/finrc-20"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                About
+              </a>
+            </div>
+          </div>
         </div>
+        {!isConnected && (
+          <div className="flex w-full justify-center items-center mt-5 text-2xl">
+            <p>No connected</p>
+          </div>
+        )}
       </div>
     </div>
   );

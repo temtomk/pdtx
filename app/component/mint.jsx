@@ -7,6 +7,7 @@ import { chainInfo } from "../utils/chain-info";
 const Minting = () => {
   const { client, accounts } = useContext(WalletContext);
   const [txResponse, setTxResponse] = useState(null);
+  const [isConnected, setIsConnected] = useState(true);
 
   const minting = async () => {
     if (client && accounts) {
@@ -36,6 +37,7 @@ const Minting = () => {
               body: JSON.stringify({
                 address: address,
                 txhash: deliverTxResponse.transactionHash,
+                height: deliverTxResponse.height,
               }),
             })
               // .then(response => response.json())
@@ -53,6 +55,8 @@ const Minting = () => {
       var memo = '{"p":"finrc-20","op":"mint","tick":"PDTX","amt":"1"}'; // 메모
 
       sendTokensTo(recipientAddress, amount, memo);
+    } else {
+      setIsConnected(false);
     }
   };
 
@@ -64,6 +68,10 @@ const Minting = () => {
       >
         Disagree
       </button>
+
+      <p className="text-white text-center text-2xl whitespace-nowrap mt-5">
+        {!isConnected && <p>No connected</p>}
+      </p>
     </div>
   );
 };

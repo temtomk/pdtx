@@ -22,7 +22,7 @@ const Minting = () => {
               },
             ],
             "auto",
-            memo
+            btoa(memo)
           );
           console.log("Transaction Response", deliverTxResponse);
           await setTxResponse(deliverTxResponse); // 상태 업데이트

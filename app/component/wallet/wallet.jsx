@@ -4,7 +4,7 @@
 import React, { createContext, useState, useEffect } from "react";
 import { SigningCosmWasmClient } from "@cosmjs/cosmwasm-stargate";
 import { GasPrice } from "@cosmjs/stargate";
-import { chainInfo } from "../utils/chain-info";
+import { chainInfo } from "../../utils/chain-info";
 import { Decimal } from "@cosmjs/math";
 
 export const WalletContext = createContext({

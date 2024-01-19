@@ -1,9 +1,9 @@
 import * as React from "react";
-import WalletConnect from "./component/wallet-connect";
-import { WalletProvider } from "./component/wallet";
+import WalletConnect from "./component/wallet/wallet-connect";
+import { WalletProvider } from "./component/wallet/wallet";
 import Pdtx from "../public/pdtx.svg";
 import Total from "./component/get-total";
-import Container from "./component/container";
+import Container from "./component/button-container/page";
 // import ProfileTotal from "./component/profile-total";
 
 export default function Component() {
@@ -39,36 +39,15 @@ export default function Component() {
 
         <Total />
 
-        <Container />
-
-        {/* <div className="justify-center items-center self-stretch bg-white bg-opacity-40 flex w-full flex-col mt-12 mb-20 px-16 py-12 max-md:max-w-full max-md:my-10 max-md:px-5">
+        <div className="justify-center items-center self-stretch bg-white bg-opacity-40 flex w-full flex-col mt-12 mb-20 px-16 py-12 max-md:max-w-full max-md:my-10 max-md:px-5">
           <div className="flex w-[620px] max-w-full flex-col items-center">
             <div className="text-white text-center md:text-[2.3vw] tracking-[2.8px] whitespace-nowrap">
               1 Disagree = 1 $PDTX
             </div>
-            <div className="grid grid-cols-3 sm:grid-cols-3 xl:grid-cols-3 flex items-stretch self-stretch justify-between gap-5 mt-14 max-md:max-w-full max-md:flex-wrap max-md:mt-10 max-sm:flex max-sm:flex-col max-sm:self-stretch max-sm:items-center max-sm:justify-between max-sm:w-auto max-sm:h-auto max-sm:grow-0">
-              <div className="col-span-1 w-full">
-                <Minting />
-              </div>
-              <div className="col-span-1 w-full shrink-0 inline-block">
-                <Profile />
-              </div>
-              <div className="col-span-1 w-full flex-col justify-center items-center">
-                <div>
-                  <div className="w-full text-white text-center text-2xl tracking-[2.88px] border whitespace-nowrap grow justify-center items-stretch bg-sky-600 px-10 py-3.5 rounded-[32px] max-md:px-5 max-sm:items-center max-sm:max-w-[154px] max-sm:mx-auto">
-                    <a
-                      href="https://twitter.com/TEAM_REVENGERS_"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Twitter
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Container />
           </div>
-        </div> */}
+        </div>
+
         <div className="text-center text-white mt-1 mb-5">
           Copyrightsⓒ 2024 All rights reserved by TEAM REVENGERS
         </div>

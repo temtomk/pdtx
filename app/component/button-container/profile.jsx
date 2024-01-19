@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useContext } from "react";
-import { WalletContext } from "./wallet";
+import { WalletContext } from "../wallet/wallet";
 
 const Profile = ({ onButtonClick, setBalance, setShowBalance }) => {
   const { accounts } = useContext(WalletContext);

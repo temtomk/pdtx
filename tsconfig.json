@@ -24,7 +24,8 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.d.ts",
-    "app/api/minting/route.js"
+    "app/api/minting/route.js",
+    "app/component/button-container/page.tsx"
   ],
   "exclude": ["node_modules"]
 }

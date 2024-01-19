@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useContext, useState } from "react";
-import { WalletContext } from "./wallet";
-import { chainInfo } from "../utils/chain-info";
+import { WalletContext } from "../wallet/wallet";
+import { chainInfo } from "../../utils/chain-info";
 
 const Minting = ({ onButtonClick }) => {
   const { client, accounts } = useContext(WalletContext);

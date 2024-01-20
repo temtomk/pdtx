@@ -1,9 +1,11 @@
 import * as React from "react";
-import WalletConnect from "./component/wallet/wallet-connect";
-import { WalletProvider } from "./component/wallet/wallet";
+import WalletConnect from "./components/wallet/wallet-connect";
+import { WalletProvider } from "./components/wallet/wallet";
 import Pdtx from "../public/pdtx.svg";
-import Total from "./component/get-total";
-import Container from "./component/button-container/page";
+import Total from "./components/get-total";
+import Container from "./components/button-container/page";
+import Main from "./components/main";
+import Blocks from "./components/blocks";
 // import ProfileTotal from "./component/profile-total";
 
 export default function Component() {
@@ -39,11 +41,14 @@ export default function Component() {
 
         <Total />
 
+        <Blocks />
+
         <div className="justify-center items-center self-stretch bg-white bg-opacity-40 flex w-full flex-col mt-12 mb-20 px-16 py-12 max-md:max-w-full max-md:my-10 max-md:px-5">
-          <div className="flex w-[620px] max-w-full flex-col items-center">
-            <div className="text-white text-center md:text-[2.3vw] tracking-[2.8px] whitespace-nowrap">
+          <div className="flex max-w-full flex-col items-center">
+            <div className="text-white text-center md:text-2xl tracking-2xl whitespace-nowrap">
               1 Disagree = 1 $PDTX
             </div>
+            <Main />
             <Container />
           </div>
         </div>

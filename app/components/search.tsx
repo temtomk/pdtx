@@ -6,8 +6,6 @@ const Search = ({ setSearchResult }) => {
   const [account, setAccount] = useState("");
 
   const search = async () => {
-    const NO_ACCOUNT = 9999999;
-
     try {
       const res = await fetch(
         `https://5141-211-184-43-102.ngrok-free.app/api/checkAmount/address=${account}`,

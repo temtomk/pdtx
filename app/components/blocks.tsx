@@ -1,6 +1,6 @@
 async function getIndexerBlock(): Promise<number> {
   const res = await fetch(
-    "https://e49e-211-184-43-102.ngrok-free.app/api/IndexerBlock"
+    "https://5141-211-184-43-102.ngrok-free.app/api/IndexerBlock"
   );
 
   const data = await res.json();

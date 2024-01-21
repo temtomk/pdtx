@@ -13,6 +13,7 @@ const Profile = ({ onButtonClick, setBalance, setShowBalance }) => {
       await fetch(`/api/minting/${accounts[0].address}`)
         .then((response) => response.json())
         .then((data) => {
+          console.log(data);
           setBalance(data.Token);
         })
         .catch((error) => console.error("Error:", error));

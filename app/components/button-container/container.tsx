@@ -1,13 +1,20 @@
-"use client";
-
-import React, { useState, useContext } from "react";
-import { WalletContext } from "../wallet/wallet";
+import React from "react";
 import Minting from "./minting";
 import Profile from "./profile";
 import Twitter from "./twitter";
 import About from "./about";
 
-const Container = ({ checkConnection, setBalance, setShowBalance }) => {
+interface ContainerProps {
+  checkConnection: () => void;
+  setBalance: (balance: number) => void;
+  setShowBalance: (show: boolean) => void;
+}
+
+const Container: React.FC<ContainerProps> = ({
+  checkConnection,
+  setBalance,
+  setShowBalance,
+}) => {
   return (
     <div className="grid grid-cols-4 sm:grid-cols-4 xl:grid-cols-4 flex items-stretch self-stretch justify-between gap-5 mt-10 max-md:max-w-full max-md:flex-wrap max-md:mt-10 max-sm:flex max-sm:flex-col max-sm:self-stretch max-sm:items-center max-sm:justify-between max-sm:w-auto max-sm:h-auto max-sm:grow-0">
       <div className="col-span-1 w-full">

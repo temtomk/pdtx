@@ -2,14 +2,15 @@
 
 import { useContext, useState } from "react";
 import { WalletContext } from "./wallet/wallet";
-import Search from "./search";
+// import Search from "./search";
+import Container from "./button-container/container";
 
 export default function Main() {
   const { client, accounts } = useContext(WalletContext);
   const [isConnected, setIsConnected] = useState(true);
   const [balance, setBalance] = useState(0);
   const [showBalance, setShowBalance] = useState(false); // 잔액 출력 상태 추가
-  const [searchResult, setSearchResult] = useState(null);
+  // const [searchResult, setSearchResult] = useState(null);
 
   const checkConnection = () => {
     setIsConnected(!!(client && accounts));
@@ -17,6 +18,13 @@ export default function Main() {
 
   return (
     <div>
+      {/* <Search setSearchResult={setSearchResult} /> */}
+
+      <Container
+        checkConnection={checkConnection}
+        setBalance={setBalance}
+        setShowBalance={setShowBalance}
+      />
       {!isConnected && (
         <div className="flex w-full justify-center items-center mt-5 text-2xl">
           <p>No connected</p>
@@ -29,13 +37,16 @@ export default function Main() {
         </div>
       )}
 
-      <Search setSearchResult={setSearchResult} />
-      {searchResult === "NA" && <div>The account does not exist.</div>}
+      {/* {searchResult === "NA" && (
+        <div className="flex w-full justify-center items-center mt-5 text-2xl">
+          The account does not exist.
+        </div>
+      )}
       {searchResult && (
         <div className="flex w-full justify-center items-center mt-5 text-2xl">
           <p>{`Balance: ${searchResult.balance}`}</p>
         </div> // balance는 실제 데이터에 맞게 수정해야 합니다.
-      )}
+      )} */}
     </div>
   );
 }

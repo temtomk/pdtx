@@ -2,7 +2,6 @@ import { NextResponse, NextRequest } from "next/server";
 import { connectDB } from "../../utils/db-connect";
 
 export async function POST(req) {
-  // let client;
   try {
     let collection = "mints";
     let database = "godfinshia";

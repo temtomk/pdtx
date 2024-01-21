@@ -2,8 +2,7 @@ import * as React from "react";
 import WalletConnect from "./components/wallet/wallet-connect";
 import { WalletProvider } from "./components/wallet/wallet";
 import Pdtx from "../public/pdtx.svg";
-import Total from "./components/get-total";
-import Container from "./components/button-container/page";
+import Total from "./components/total";
 import Main from "./components/main";
 import Blocks from "./components/blocks";
 // import ProfileTotal from "./component/profile-total";
@@ -49,7 +48,6 @@ export default function Component() {
               1 Disagree = 1 $PDTX
             </div>
             <Main />
-            <Container />
           </div>
         </div>
 

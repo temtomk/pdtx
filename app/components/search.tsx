@@ -6,10 +6,11 @@ const Search = ({ setSearchResult }) => {
   const [account, setAccount] = useState("");
 
   const search = async () => {
+    const NO_ACCOUNT = 9999999;
+
     try {
-      console.log(account);
       const res = await fetch(
-        `https://5141-211-184-43-102.ngrok-free.app/api/checkAmount/address/${account}`,
+        `https://5141-211-184-43-102.ngrok-free.app/api/checkAmount/address=${account}`,
         {
           method: "GET",
           headers: {
@@ -18,15 +19,13 @@ const Search = ({ setSearchResult }) => {
           },
         }
       );
-      console.log(account);
-      console.log(res);
 
       const data = await res.json();
 
       const result: number = data[account];
+
       setSearchResult(result);
     } catch (error) {
-      console.log(account);
       console.log(error);
     }
   };

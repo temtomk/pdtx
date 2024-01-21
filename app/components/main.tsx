@@ -2,7 +2,7 @@
 
 import { useContext, useState } from "react";
 import { WalletContext } from "./wallet/wallet";
-// import Search from "./search";
+import Search from "./search";
 import Container from "./button-container/container";
 
 export default function Main() {
@@ -10,7 +10,7 @@ export default function Main() {
   const [isConnected, setIsConnected] = useState(true);
   const [balance, setBalance] = useState(0);
   const [showBalance, setShowBalance] = useState(false); // 잔액 출력 상태 추가
-  // const [searchResult, setSearchResult] = useState(null);
+  const [searchResult, setSearchResult] = useState(null);
 
   const checkConnection = () => {
     setIsConnected(!!(client && accounts));
@@ -18,7 +18,7 @@ export default function Main() {
 
   return (
     <div>
-      {/* <Search setSearchResult={setSearchResult} /> */}
+      <Search setSearchResult={setSearchResult} />
 
       <Container
         checkConnection={checkConnection}
@@ -37,16 +37,16 @@ export default function Main() {
         </div>
       )}
 
-      {/* {searchResult === "NA" && (
+      {searchResult === undefined && (
         <div className="flex w-full justify-center items-center mt-5 text-2xl">
           The account does not exist.
         </div>
       )}
       {searchResult && (
         <div className="flex w-full justify-center items-center mt-5 text-2xl">
-          <p>{`Balance: ${searchResult.balance}`}</p>
+          <p>{`Balance: ${searchResult}`}</p>
         </div> // balance는 실제 데이터에 맞게 수정해야 합니다.
-      )} */}
+      )}
     </div>
   );
 }

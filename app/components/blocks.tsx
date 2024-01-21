@@ -16,9 +16,9 @@ async function getCurrentBlock(): Promise<number> {
   return data.result.response.last_block_height;
 }
 
-export default function Blocks() {
-  const indexerBlock = getIndexerBlock();
-  const currentBlock = getCurrentBlock();
+export default async function Blocks() {
+  const indexerBlock = await getIndexerBlock();
+  const currentBlock = await getCurrentBlock();
   return (
     <div className="flex justify-center margin-right mt-5 text-xl">
       (Indexer Block: {indexerBlock}, Current Block: {currentBlock})

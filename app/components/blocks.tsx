@@ -1,24 +1,42 @@
-async function getIndexerBlock(): Promise<number> {
-  const res = await fetch(
-    "https://5141-211-184-43-102.ngrok-free.app/api/IndexerBlock"
-  );
+"use client";
 
-  const data = await res.json();
+import { useState, useEffect } from "react";
 
-  return data.currentBlockHeight;
-}
+export default function Blocks() {
+  const [currentBlock, setCurrentBlock] = useState(0);
+  const [indexerBlock, setIndexerBlock] = useState(0);
 
-async function getCurrentBlock(): Promise<number> {
-  const res = await fetch("https://finschia-rpc.finschia.io/abci_info?");
+  useEffect(() => {
+    async function getIndexerBlock() {
+      const res = await fetch(
+        "https://5141-211-184-43-102.ngrok-free.app/api/IndexerBlock",
+        {
+          cache: "no-store",
+          headers: {
+            "ngrok-skip-browser-warning": "true",
+          },
+        }
+      );
 
-  const data = await res.json();
+      const data = await res.json();
 
-  return data.result.response.last_block_height;
-}
+      setIndexerBlock(data.currentBlockHeight);
+    }
 
-export default async function Blocks() {
-  const indexerBlock = await getIndexerBlock();
-  const currentBlock = await getCurrentBlock();
+    async function getCurrentBlock() {
+      const res = await fetch("https://finschia-rpc.finschia.io/abci_info?", {
+        cache: "no-store",
+      });
+
+      const data = await res.json();
+
+      setCurrentBlock(data.result.response.last_block_height);
+    }
+
+    getIndexerBlock();
+    getCurrentBlock();
+  }, []);
+
   return (
     <div className="flex justify-center margin-right mt-5 text-xl">
       (Indexer Block: {indexerBlock}, Current Block: {currentBlock})

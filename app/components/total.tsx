@@ -1,13 +1,27 @@
-import React from "react";
+"use client";
 
-async function Total() {
-  const res = await fetch(
-    "https://5141-211-184-43-102.ngrok-free.app/api/totalAmounts"
-  );
+import React, { useState, useEffect } from "react";
 
-  const data = await res.json();
+function Total() {
+  const [total, setTotal] = useState(0);
 
-  const total = data.totalAmount;
+  useEffect(() => {
+    async function fetchTotal() {
+      const response = await fetch(
+        "https://5141-211-184-43-102.ngrok-free.app/api/totalAmounts",
+        {
+          headers: {
+            "ngrok-skip-browser-warning": "true",
+          },
+        }
+      );
+      const data = await response.json();
+
+      setTotal(data.totalAmount);
+    }
+
+    fetchTotal();
+  }, []);
 
   const percent = ((total / 7517509) * 100).toFixed(3);
 

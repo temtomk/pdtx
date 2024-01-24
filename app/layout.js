@@ -6,6 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "PDTX (NO PDT)",
   description: "We don't want PDT",
+  keywords: "Finschia, Klaytn, PDTX, NO PDT, PDT, disagree",
 };
 
 export default function RootLayout({ children }) {

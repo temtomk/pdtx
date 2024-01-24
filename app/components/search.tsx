@@ -8,7 +8,7 @@ const Search = ({ setSearchResult }) => {
   const search = async () => {
     try {
       const res = await fetch(
-        `https://5141-211-184-43-102.ngrok-free.app/api/checkAmount/address=${account}`,
+        `https://df1e-211-184-43-102.ngrok-free.app/api/checkAmount/address=${account}`,
         {
           method: "GET",
           headers: {

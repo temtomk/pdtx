@@ -45,7 +45,7 @@ export default function Component() {
           자기 자신에게 FNSA를 송금하여 MEMO 란에
           <br />
           <p className="font-bold text-yellow-300">
-            eyJwljogImZpbnJjLT|wliwib3AiOiAibWludCIsInRpY2siOiAiUERUWClsImFtdCI6ICIxIn0=
+            eyJwIjogImZpbnJjLTIwIiwib3AiOiAibWludCIsInRpY2siOiAiUERUWCIsImFtdCI6ICIxIn0=
           </p>
           라고 입력 후 전송하시면 1$PDTX 채굴 완료!
           <br />

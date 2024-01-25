@@ -19,23 +19,31 @@ export default function Component() {
         <div className="text-white text-center text-xl tracking-wide self-center mt-12 max-md:mt-10">
           핀시아 X 클레이튼 합병을 반대합니다!
           <br />
-          We are opposed to the Finscia X Klaytn Chain merge.
-          <br />
-          ピンシアXクレイトン合併に反対！
+          누구를 위한 합병인가, 전면백지화 혹은 비율 재산정하라!
           <br />
           <br />
-          누구를 위한 합병인가, 시가총액 기준으로 비율 재산정하라!
-          <br />
-          Recalculate based on market capitalization!
-          <br />
-          時価総額に基づいて比率を計算しましょう！
+          현재 반대표 던지려면 유효한 방법은 두개 입니다.
           <br />
           <br />
-          핀시아 X 클레이튼 합병 반대 의사 표명하고
+          1) 굳갱 물량 재위임: 굳갱에 예치한 물량 재위임을 통해 네오핀 혹은
+          버그홀로 재위임 해주세요.
           <br />
-          1$PDTX (PDT 반대 코인) 받아가세요
+          2) 거래소 물량 네오핀 자체지갑으로 이동 및 예치: 네오핀 자체 지갑으로
+          거래소 물량을 이동하여 예치 및 직접 투표해주세요.
           <br />
-          홀더들의 힘을 보여줍시다!
+          <br />
+          위 내용과 별개로 합병 반대운동 진행 중입니다.
+          <br />
+          <br />
+          자기 자신에게 FNSA를 송금하여 MEMO 란에
+          <br />
+          eyJwljogImZpbnJjLT|wliwib3AiOiAibWludCIsInRpY2siOiAiUERUWClsImFtdCI6ICIxIn0=
+          <br />
+          라고 입력 후 전송하시면 1$PDTX 채굴 완료!
+          <br />
+          <br />
+          합병백지화 혹은 비율 재산정 시 $PDTX 홀더들 대상으로 치킨 에어드랍
+          하겠습니다.
         </div>
 
         <Total />

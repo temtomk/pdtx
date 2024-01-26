@@ -9,7 +9,7 @@ export default function Blocks() {
   useEffect(() => {
     async function getIndexerBlock() {
       const res = await fetch(
-        "https://df1e-211-184-43-102.ngrok-free.app/api/IndexerBlock",
+        "https://f8c2-211-184-43-102.ngrok-free.app/api/IndexerBlock",
         {
           cache: "no-store",
           headers: {

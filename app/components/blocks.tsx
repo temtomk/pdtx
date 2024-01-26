@@ -6,17 +6,16 @@ export default function Blocks() {
   const [currentBlock, setCurrentBlock] = useState(0);
   const [indexerBlock, setIndexerBlock] = useState(0);
 
+  const url = process.env.NEXT_PUBLIC_INDEXER_URL;
+
   useEffect(() => {
     async function getIndexerBlock() {
-      const res = await fetch(
-        "https://f8c2-211-184-43-102.ngrok-free.app/api/IndexerBlock",
-        {
-          cache: "no-store",
-          headers: {
-            "ngrok-skip-browser-warning": "true",
-          },
-        }
-      );
+      const res = await fetch(url + "/api/IndexerBlock", {
+        cache: "no-store",
+        headers: {
+          "ngrok-skip-browser-warning": "true",
+        },
+      });
 
       const data = await res.json();
 

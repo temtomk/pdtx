@@ -4,17 +4,15 @@ import React, { useState, useEffect } from "react";
 
 function Total() {
   const [total, setTotal] = useState(0);
+  const url = process.env.NEXT_PUBLIC_INDEXER_URL;
 
   useEffect(() => {
     async function fetchTotal() {
-      const response = await fetch(
-        "https://f8c2-211-184-43-102.ngrok-free.app/api/totalAmounts",
-        {
-          headers: {
-            "ngrok-skip-browser-warning": "true",
-          },
-        }
-      );
+      const response = await fetch(url + "/api/totalAmounts", {
+        headers: {
+          "ngrok-skip-browser-warning": "true",
+        },
+      });
       const data = await response.json();
 
       setTotal(data.totalAmount);

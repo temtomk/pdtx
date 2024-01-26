@@ -5,18 +5,17 @@ import React, { useState } from "react";
 const Search = ({ setSearchResult }) => {
   const [account, setAccount] = useState("");
 
+  const url = process.env.NEXT_PUBLIC_INDEXER_URL;
+
   const search = async () => {
     try {
-      const res = await fetch(
-        `https://f8c2-211-184-43-102.ngrok-free.app/api/checkAmount/address=${account}`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "ngrok-skip-browser-warning": "true",
-          },
-        }
-      );
+      const res = await fetch(url + `/api/checkAmount/address=${account}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "ngrok-skip-browser-warning": "true",
+        },
+      });
 
       const data = await res.json();
 

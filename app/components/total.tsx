@@ -24,7 +24,7 @@ function Total() {
   const percent = ((total / 7517509) * 100).toFixed(3);
 
   return (
-    <div className="flex flex-col justify-center items-center mt-5 text-2xl text-white">
+    <div className="flex flex-col justify-center items-center mt-5 sm:text-2xl text-white">
       <p>
         현재까지 채굴된 $PDTX: {total ? total.toLocaleString() : 0} / 7,517,509
         ({percent}%)

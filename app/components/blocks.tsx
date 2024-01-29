@@ -37,8 +37,10 @@ export default function Blocks() {
   }, []);
 
   return (
-    <div className="flex justify-center margin-right mt-5 text-xl">
-      (Indexer Block: {indexerBlock}, Current Block: {currentBlock})
+    <div className="flex flex-col text-center mt-5 whitespace-pre sm:text-xl">
+      Indexer Block: {indexerBlock}
+      <br />
+      Current Block: {currentBlock}
     </div>
   );
 }

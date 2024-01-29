@@ -34,7 +34,7 @@ const Search = ({ setSearchResult }) => {
         placeholder="Address: link1..."
         value={account}
         onChange={(e) => setAccount(e.target.value)}
-        className="w-80 h-10 bg-gray-200 border-black border placeholder:text-center text-black" // h-10 클래스를 통해 input의 높이를 조절
+        className="sm:w-80 h-10 bg-gray-200 border-black border placeholder:text-center text-black" // h-10 클래스를 통해 input의 높이를 조절
       />
       <button
         onClick={search}

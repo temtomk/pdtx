@@ -15,7 +15,7 @@ async function getDisagree(): Promise<number> {
 export async function Disagree() {
   const disagree = await getDisagree();
   return (
-    <div className="font-bold text-4xl ">
+    <div className="font-bold text-3xl sm:text-4xl ">
       현재 강한 반대율: <span className="text-yellow-300">{disagree} %</span>
     </div>
   );
